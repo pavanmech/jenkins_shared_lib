@@ -1,4 +1,4 @@
-def baseUrl = "https://github.com/ybmadhu/"
+def baseUrl = "https://github.com/pavanmech/"
 def repoName = "$reponame"
 def gitRepoUrl= baseUrl + repoName + '.git'
 def jobName = "$reponame"
@@ -14,7 +14,7 @@ def jobName = "$reponame"
          }
         }
         logRotator{
-         numToKeep(5)
+         numToKeep(3)
         }
         definition {
             cpsScm {

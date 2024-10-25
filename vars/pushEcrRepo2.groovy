@@ -1,4 +1,4 @@
-adef call(Map pipelineParams){
+def call(Map pipelineParams){
 def projectName = "${pipelineParams.ecrRepoName}"
 
 pipeline {
@@ -7,7 +7,7 @@ pipeline {
     {
         VERSION = "${BUILD_NUMBER}"
         PROJECT = "${projectName}"
-        IMAGE = "$PROJECT:$VERSION"
+        IMAGE = "${PROJECT}:${VERSION}"
         ECRURL = 'https://533267166046.dkr.ecr.ap-south-1.amazonaws.com/${projectName}'
         ECRCRED = 'ecr:ap-south-1:aws_credentials'
     }

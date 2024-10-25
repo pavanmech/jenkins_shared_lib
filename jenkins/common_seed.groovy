@@ -22,7 +22,7 @@ def jobName = "$reponame"
                     git {
                         remote {
                             url(gitRepoUrl)
-                            credentials('git_credentials')
+                            credentials('git_credentials_new')
                         }
                         branches('main')
                         extensions {

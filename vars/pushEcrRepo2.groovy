@@ -1,5 +1,5 @@
 def call(Map pipelineParams){
-def projectName = "${pipelineParams.ecrRepoName}"
+ def projectName = "${pipelineParams.ecrRepoName}".replaceAll(/[^a-zA-Z0-9]+/, "_")
 
 pipeline {
    agent any

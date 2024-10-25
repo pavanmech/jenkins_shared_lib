@@ -15,7 +15,7 @@ pipeline {
          stage('Image Build'){
              steps{
                  script{
-                       docker.build('$IMAGE')
+                  docker.build("${IMAGE}")
                  }
              }
          }
@@ -24,10 +24,9 @@ pipeline {
              script
                 {
 
-                    docker.withRegistry(ECRURL, ECRCRED)
-                    {
-                        docker.image(IMAGE).push()
-                    }
+                   docker.withRegistry("${ECRURL}", ECRCRED) {
+                  docker.image("${IMAGE}").push()
+                  }
                 }
             }
          }
